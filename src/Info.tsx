@@ -26,8 +26,8 @@ export default function Info(props: DataProps) {
                     ]}
                     series={[{ data: [...props.dataArray], valueFormatter: props.formatingFunction }]}
                     yAxis={[props.yMax != undefined && props.yMin != undefined  ? { min: props.yMin, max: props.yMax } : {}]}
-                    height={250}
-                    width={450}
+                    height={200}
+                    width={400}
                     slotProps={{
                         loadingOverlay: { message: "Carregando dados..." },
                     }}
