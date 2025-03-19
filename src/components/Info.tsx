@@ -10,9 +10,8 @@ interface DataProps {
 }
 export default function Info(props: DataProps) {
     return (
-        <>
             <section className="flex flex-col justify-center w-2/5 items-center mx-5">
-                <Label text={props.labelText} />
+                <Label>{props.labelText}</Label>
                 <LineChart
                     xAxis={[
                         {
@@ -25,7 +24,7 @@ export default function Info(props: DataProps) {
                         },
                     ]}
                     series={[{ data: [...props.dataArray], valueFormatter: props.formatingFunction }]}
-                    yAxis={[props.yMax != undefined && props.yMin != undefined  ? { min: props.yMin, max: props.yMax } : {}]}
+                    yAxis={[props.yMax != null && props.yMin != null  ? { min: props.yMin, max: props.yMax } : {}]}
                     height={200}
                     width={400}
                     slotProps={{
@@ -33,6 +32,5 @@ export default function Info(props: DataProps) {
                     }}
                 />
             </section>
-        </>
     );
 }

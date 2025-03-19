@@ -33,10 +33,8 @@ export default function ({ lat, long }: { lat: number; long: number }) {
         };
 
         const url = "https://api.open-meteo.com/v1/forecast";
-        const fetchData = async () => {
-            return await fetchWeatherApi(url, params);
-        };
-        fetchData().then((responses) => {
+        
+        fetchWeatherApi(url, params).then((responses) => {
             // Helper function to form time ranges
 
             // Process first location. Add a for-loop for multiple locations or weather models
